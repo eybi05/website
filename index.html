@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Charity Olympiad</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/hero.css" />
+  <link rel="stylesheet" href="styles/about.css" />
+  <link rel="stylesheet" href="styles/stats.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-icon">⚡</span>
+        <span>ICO</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link nav__link--active">About</a></li>
+        <li><a href="register.html" class="nav__link">Register</a></li>
+        <li><a href="organisers.html" class="nav__link">Exams</a></li>
+        <li><a href="leaderboard.html" class="nav__link">Leaderboard</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme">
+          <span class="btn-theme__icon">☀</span>
+        </button>
+        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__inner">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Season 1 — Summer 2026 Now Open
+      </div>
+      <h1 class="hero__title">
+        International<br />
+        <em>Charity</em> Olympiad
+      </h1>
+      <p class="hero__subtitle">Compete Globally. Support Meaningfully.</p>
+      <div class="hero__cta">
+        <a href="register.html" class="btn btn--primary btn--lg">Register Now</a>
+        <a href="leaderboard.html" class="btn btn--ghost btn--lg">View Leaderboard</a>
+        <a href="donate.html" class="btn btn--accent btn--lg">Donate</a>
+      </div>
+      <div class="hero__meta">
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="12400">0</span>
+          <span class="hero__stat-label">Participants</span>
+        </div>
+        <div class="hero__stat-sep"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="87">0</span>
+          <span class="hero__stat-label">Countries</span>
+        </div>
+        <div class="hero__stat-sep"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="48200" data-prefix="$">0</span>
+          <span class="hero__stat-label">Raised</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Are</span>
+        <h2 class="section-title">Where Academia Meets Impact</h2>
+        <p class="section-sub">The International Charity Olympiad bridges world-class academic competition with meaningful charitable giving — proving that the brightest minds can also be the most generous.</p>
+      </div>
+      <div class="about__grid">
+        <div class="about__card" data-reveal>
+          <div class="about__card-icon">🌍</div>
+          <h3>Global Participation</h3>
+          <p>Students from every continent compete on equal footing, earning recognition on the world stage regardless of their school's resources.</p>
+        </div>
+        <div class="about__card" data-reveal>
+          <div class="about__card-icon">⚖️</div>
+          <h3>Fair Competition</h3>
+          <p>Two-round structure with MCQ and FRQ components ensures a rigorous, multidimensional assessment of each student's abilities.</p>
+        </div>
+        <div class="about__card" data-reveal>
+          <div class="about__card-icon">❤️</div>
+          <h3>Charity Impact</h3>
+          <p>Every registration fee and voluntary donation flows directly to verified charity partners. Compete and contribute simultaneously.</p>
+        </div>
+        <div class="about__card" data-reveal>
+          <div class="about__card-icon">📚</div>
+          <h3>Educational Access</h3>
+          <p>A portion of proceeds funds educational materials in underserved communities — turning competition into opportunity for everyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROUNDS -->
+  <section class="rounds section" id="rounds">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Competition</span>
+        <h2 class="section-title">Competition Structure</h2>
+      </div>
+      <div class="rounds__track">
+        <div class="rounds__connector"></div>
+        <div class="rounds__item" data-reveal>
+          <div class="rounds__badge rounds__badge--1">Round 1</div>
+          <div class="rounds__card">
+            <div class="rounds__card-head">
+              <h3>MCQ</h3>
+              <span class="rounds__points">150 pts</span>
+            </div>
+            <ul class="rounds__list">
+              <li>Multiple Choice Questions</li>
+              <li>Timed examination</li>
+              <li>Automatic grading</li>
+              <li>Results within 24 hours</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rounds__item" data-reveal>
+          <div class="rounds__badge rounds__badge--2">Round 2</div>
+          <div class="rounds__card">
+            <div class="rounds__card-head">
+              <h3>FRQ</h3>
+              <span class="rounds__points">300 pts</span>
+            </div>
+            <ul class="rounds__list">
+              <li>Free Response Questions</li>
+              <li>Extended written answers</li>
+              <li>AI-assisted + manual grading</li>
+              <li>Results within 7 days</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rounds__item" data-reveal>
+          <div class="rounds__badge rounds__badge--total">Total</div>
+          <div class="rounds__card rounds__card--total">
+            <div class="rounds__card-head">
+              <h3>Academic Total</h3>
+              <span class="rounds__points rounds__points--gold">450 pts</span>
+            </div>
+            <p class="rounds__formula">Round 1 + Round 2 = Exam Overall</p>
+            <p class="rounds__formula-sub">Ranked separately from charity contributions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARITY POINTS -->
+  <section class="charity section" id="charity">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Charity System</span>
+        <h2 class="section-title">How Charity Points Work</h2>
+        <p class="section-sub">Academic rank and charity rank stay visibly separate. Donations never buy victory — they build impact.</p>
+      </div>
+      <div class="charity__grid">
+        <div class="charity__method" data-reveal>
+          <div class="charity__method-num">01</div>
+          <h3>Exam Purchase</h3>
+          <p>Buying the exam automatically grants <strong>5 charity points</strong> — because the $5 exam fee goes directly to charity.</p>
+          <div class="charity__tag">+5 pts on purchase</div>
+        </div>
+        <div class="charity__method" data-reveal>
+          <div class="charity__method-num">02</div>
+          <h3>Additional Donation</h3>
+          <p>Every extra dollar donated equals <strong>1 charity point</strong>. Points cap at 100 — donations beyond that are still accepted and appreciated.</p>
+          <div class="charity__tag">$1 = 1 pt (max 100)</div>
+        </div>
+        <div class="charity__method" data-reveal>
+          <div class="charity__method-num">03</div>
+          <h3>Referral Bonus</h3>
+          <p>Share your unique referral link. Each time someone registers using it, you earn <strong>+2 charity points</strong> automatically.</p>
+          <div class="charity__tag">+2 pts per referral</div>
+        </div>
+      </div>
+      <div class="charity__notice" data-reveal>
+        <span class="charity__notice-icon">ℹ️</span>
+        <p>The <strong>Impact Recognition Ranking</strong> combines academic score and charity points to celebrate well-rounded participants — but individual academic and charity leaderboards remain fully separate and transparent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE STATS -->
+  <section class="stats section" id="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__item" data-reveal>
+          <span class="stats__num" data-count="12400">0</span>
+          <span class="stats__label">Total Participants</span>
+        </div>
+        <div class="stats__item" data-reveal>
+          <span class="stats__num" data-count="87">0</span>
+          <span class="stats__label">Countries Represented</span>
+        </div>
+        <div class="stats__item" data-reveal>
+          <span class="stats__num" data-count="48200" data-prefix="$">0</span>
+          <span class="stats__label">Total Donations</span>
+        </div>
+        <div class="stats__item" data-reveal>
+          <span class="stats__num" data-count="9850">0</span>
+          <span class="stats__label">Exams Completed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARITY PARTNERS -->
+  <section class="partners section" id="partners">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Partners</span>
+        <h2 class="section-title">Charity Partners</h2>
+        <p class="section-sub">Every dollar is traceable. We publish full transparency reports quarterly.</p>
+      </div>
+      <div class="partners__grid">
+        <div class="partner-card" data-reveal>
+          <div class="partner-card__logo">🏫</div>
+          <h4>EduAccess Global</h4>
+          <p>Funds school supplies in 23 countries</p>
+        </div>
+        <div class="partner-card" data-reveal>
+          <div class="partner-card__logo">💧</div>
+          <h4>Clean Water Initiative</h4>
+          <p>Builds wells and sanitation in rural areas</p>
+        </div>
+        <div class="partner-card" data-reveal>
+          <div class="partner-card__logo">📖</div>
+          <h4>OpenBooks Foundation</h4>
+          <p>Distributes free textbooks to students globally</p>
+        </div>
+        <div class="partner-card" data-reveal>
+          <div class="partner-card__logo">🌱</div>
+          <h4>Youth STEM Africa</h4>
+          <p>STEM labs for under-resourced African schools</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">⚡ ICO</div>
+          <p>International Charity Olympiad — competing for a better world.</p>
+        </div>
+        <div class="footer__col">
+          <h5>Platform</h5>
+          <a href="index.html">About</a>
+          <a href="register.html">Register</a>
+          <a href="organisers.html">Exams</a>
+          <a href="leaderboard.html">Leaderboard</a>
+          <a href="donate.html">Donate</a>
+        </div>
+        <div class="footer__col">
+          <h5>Subjects</h5>
+          <a href="#">Chemistry</a>
+          <a href="#">Mathematics</a>
+          <a href="#">Physics</a>
+          <a href="#">Biology</a>
+        </div>
+        <div class="footer__col">
+          <h5>Contact</h5>
+          <a href="mailto:info@ico-olympiad.org">info@ico-olympiad.org</a>
+          <a href="#">Transparency Report</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 International Charity Olympiad. All rights reserved.</p>
+        <p>Season 1 — Summer 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/counters.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

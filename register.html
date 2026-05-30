@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — ICO</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/register.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><span class="nav__logo-icon">⚡</span><span>ICO</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">About</a></li>
+        <li><a href="register.html" class="nav__link nav__link--active">Register</a></li>
+        <li><a href="organisers.html" class="nav__link">Exams</a></li>
+        <li><a href="leaderboard.html" class="nav__link">Leaderboard</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme"><span class="btn-theme__icon">☀</span></button>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="reg-page">
+    <div class="reg-page__glow"></div>
+    <div class="container">
+      <div class="reg-layout">
+
+        <!-- LEFT INFO PANEL -->
+        <aside class="reg-info" data-reveal>
+          <span class="section-tag">Join the Olympiad</span>
+          <h1 class="reg-info__title">Start Your Journey</h1>
+          <p class="reg-info__sub">Register, pick your subject, and compete globally — while contributing to a cause that matters.</p>
+
+          <div class="reg-perks">
+            <div class="reg-perk">
+              <div class="reg-perk__icon">📜</div>
+              <div>
+                <strong>Official Certificate</strong>
+                <p>Downloadable PDF upon completion</p>
+              </div>
+            </div>
+            <div class="reg-perk">
+              <div class="reg-perk__icon">🌐</div>
+              <div>
+                <strong>Global Leaderboard</strong>
+                <p>Rank among students in 87+ countries</p>
+              </div>
+            </div>
+            <div class="reg-perk">
+              <div class="reg-perk__icon">❤️</div>
+              <div>
+                <strong>5 Charity Points</strong>
+                <p>Granted automatically on registration</p>
+              </div>
+            </div>
+            <div class="reg-perk">
+              <div class="reg-perk__icon">🔗</div>
+              <div>
+                <strong>Referral Link</strong>
+                <p>Earn +2 points per referral</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reg-fee">
+            <div class="reg-fee__label">Exam Fee</div>
+            <div class="reg-fee__price">$5</div>
+            <div class="reg-fee__note">100% goes to charity partners</div>
+          </div>
+        </aside>
+
+        <!-- FORM PANEL -->
+        <div class="reg-form-wrap" data-reveal>
+          <!-- STEP INDICATOR -->
+          <div class="reg-steps">
+            <div class="reg-step reg-step--active" data-step="1">
+              <div class="reg-step__num">1</div>
+              <span>Details</span>
+            </div>
+            <div class="reg-step__line"></div>
+            <div class="reg-step" data-step="2">
+              <div class="reg-step__num">2</div>
+              <span>Subject</span>
+            </div>
+            <div class="reg-step__line"></div>
+            <div class="reg-step" data-step="3">
+              <div class="reg-step__num">3</div>
+              <span>Payment</span>
+            </div>
+          </div>
+
+          <!-- STEP 1 -->
+          <form class="reg-form" id="regForm" novalidate>
+            <div class="reg-form__step" id="step1">
+              <h2 class="reg-form__title">Your Details</h2>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="fullName">Full Name <span class="required">*</span></label>
+                  <input type="text" id="fullName" placeholder="Jane Doe" required />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email Address <span class="required">*</span></label>
+                  <input type="email" id="email" placeholder="jane@example.com" required />
+                </div>
+                <div class="form-field">
+                  <label for="country">Country <span class="required">*</span></label>
+                  <select id="country" required>
+                    <option value="">Select your country…</option>
+                    <option>Afghanistan</option><option>Albania</option><option>Algeria</option>
+                    <option>Argentina</option><option>Armenia</option><option>Australia</option>
+                    <option>Austria</option><option>Azerbaijan</option><option>Bangladesh</option>
+                    <option>Belarus</option><option>Belgium</option><option>Bolivia</option>
+                    <option>Brazil</option><option>Bulgaria</option><option>Cambodia</option>
+                    <option>Canada</option><option>Chile</option><option>China</option>
+                    <option>Colombia</option><option>Croatia</option><option>Czech Republic</option>
+                    <option>Denmark</option><option>Ecuador</option><option>Egypt</option>
+                    <option>Estonia</option><option>Ethiopia</option><option>Finland</option>
+                    <option>France</option><option>Georgia</option><option>Germany</option>
+                    <option>Ghana</option><option>Greece</option><option>Hungary</option>
+                    <option>India</option><option>Indonesia</option><option>Iran</option>
+                    <option>Iraq</option><option>Ireland</option><option>Israel</option>
+                    <option>Italy</option><option>Japan</option><option>Jordan</option>
+                    <option>Kazakhstan</option><option>Kenya</option><option>Latvia</option>
+                    <option>Lebanon</option><option>Lithuania</option><option>Malaysia</option>
+                    <option>Mexico</option><option>Morocco</option><option>Netherlands</option>
+                    <option>New Zealand</option><option>Nigeria</option><option>Norway</option>
+                    <option>Pakistan</option><option>Peru</option><option>Philippines</option>
+                    <option>Poland</option><option>Portugal</option><option>Romania</option>
+                    <option>Russia</option><option>Saudi Arabia</option><option>Serbia</option>
+                    <option>Singapore</option><option>Slovakia</option><option>South Africa</option>
+                    <option>South Korea</option><option>Spain</option><option>Sri Lanka</option>
+                    <option>Sweden</option><option>Switzerland</option><option>Thailand</option>
+                    <option>Turkey</option><option>Ukraine</option><option>United Kingdom</option>
+                    <option>United States</option><option>Uzbekistan</option><option>Venezuela</option>
+                    <option>Vietnam</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="school">School / Institution <span class="required">*</span></label>
+                  <input type="text" id="school" placeholder="e.g. MIT, Baku State University" required />
+                </div>
+                <div class="form-field">
+                  <label for="password">Password <span class="required">*</span></label>
+                  <input type="password" id="password" placeholder="Min. 8 characters" required minlength="8" />
+                </div>
+                <div class="form-field">
+                  <label for="confirm">Confirm Password <span class="required">*</span></label>
+                  <input type="password" id="confirm" placeholder="Repeat password" required />
+                </div>
+                <div class="form-field form-field--full">
+                  <label for="referral">Referral Code <span class="optional">(optional)</span></label>
+                  <input type="text" id="referral" placeholder="e.g. ICO-ABC123" />
+                </div>
+              </div>
+              <button type="button" class="btn btn--primary btn--lg step-next" data-target="2">Continue →</button>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="reg-form__step hidden" id="step2">
+              <h2 class="reg-form__title">Choose Your Subject</h2>
+              <div class="subject-grid">
+                <label class="subject-card">
+                  <input type="radio" name="subject" value="chemistry" />
+                  <div class="subject-card__inner">
+                    <div class="subject-card__icon">⚗️</div>
+                    <h4>Chemistry</h4>
+                    <p>Organic, Inorganic & Physical</p>
+                    <div class="subject-card__meta">
+                      <span>MCQ + FRQ</span>
+                      <span>450 pts</span>
+                    </div>
+                  </div>
+                </label>
+                <label class="subject-card">
+                  <input type="radio" name="subject" value="mathematics" />
+                  <div class="subject-card__inner">
+                    <div class="subject-card__icon">📐</div>
+                    <h4>Mathematics</h4>
+                    <p>Algebra, Calculus & Combinatorics</p>
+                    <div class="subject-card__meta">
+                      <span>MCQ + FRQ</span>
+                      <span>450 pts</span>
+                    </div>
+                  </div>
+                </label>
+                <label class="subject-card">
+                  <input type="radio" name="subject" value="physics" />
+                  <div class="subject-card__inner">
+                    <div class="subject-card__icon">⚛️</div>
+                    <h4>Physics</h4>
+                    <p>Mechanics, Electro & Quantum</p>
+                    <div class="subject-card__meta">
+                      <span>MCQ + FRQ</span>
+                      <span>450 pts</span>
+                    </div>
+                  </div>
+                </label>
+                <label class="subject-card">
+                  <input type="radio" name="subject" value="biology" />
+                  <div class="subject-card__inner">
+                    <div class="subject-card__icon">🧬</div>
+                    <h4>Biology</h4>
+                    <p>Cell, Genetics & Ecology</p>
+                    <div class="subject-card__meta">
+                      <span>MCQ + FRQ</span>
+                      <span>450 pts</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="step-nav">
+                <button type="button" class="btn btn--ghost btn--lg step-back" data-target="1">← Back</button>
+                <button type="button" class="btn btn--primary btn--lg step-next" data-target="3">Continue →</button>
+              </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="reg-form__step hidden" id="step3">
+              <h2 class="reg-form__title">Payment &amp; Donation</h2>
+              <div class="payment-summary">
+                <div class="payment-row">
+                  <span>Exam Fee</span>
+                  <span>$5.00</span>
+                </div>
+                <div class="payment-row payment-row--charity">
+                  <span>→ Includes 5 charity points</span>
+                </div>
+              </div>
+              <div class="donation-section">
+                <h4>Add Extra Donation <span class="optional">(optional)</span></h4>
+                <p>Each extra dollar = 1 charity point (max 100 total)</p>
+                <div class="donation-presets">
+                  <button type="button" class="donation-btn" data-amount="5">+$5</button>
+                  <button type="button" class="donation-btn" data-amount="10">+$10</button>
+                  <button type="button" class="donation-btn" data-amount="20">+$20</button>
+                  <button type="button" class="donation-btn" data-amount="50">+$50</button>
+                </div>
+                <div class="donation-custom">
+                  <label for="customDonation">Custom amount</label>
+                  <div class="donation-custom__input">
+                    <span class="donation-currency">$</span>
+                    <input type="number" id="customDonation" min="0" max="5000" placeholder="0" />
+                  </div>
+                </div>
+                <div class="donation-preview" id="donationPreview">
+                  You will receive <strong id="charityPreview">5</strong> charity points
+                </div>
+              </div>
+              <div class="payment-total">
+                <span>Total</span>
+                <span id="totalAmount">$5.00</span>
+              </div>
+              <div class="step-nav">
+                <button type="button" class="btn btn--ghost btn--lg step-back" data-target="2">← Back</button>
+                <button type="submit" class="btn btn--primary btn--lg">Complete Registration →</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

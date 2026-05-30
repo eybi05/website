@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate — ICO</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/donate.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><span class="nav__logo-icon">⚡</span><span>ICO</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">About</a></li>
+        <li><a href="register.html" class="nav__link">Register</a></li>
+        <li><a href="organisers.html" class="nav__link">Exams</a></li>
+        <li><a href="leaderboard.html" class="nav__link">Leaderboard</a></li>
+        <li><a href="donate.html" class="nav__link nav__link--active">Donate</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme"><span class="btn-theme__icon">☀</span></button>
+        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="don-hero">
+      <div class="don-hero__glow don-hero__glow--1"></div>
+      <div class="don-hero__glow don-hero__glow--2"></div>
+      <div class="container">
+        <div class="don-hero__inner">
+          <span class="section-tag">Make a Difference</span>
+          <h1 class="don-hero__title">Every Dollar <em>Counts</em></h1>
+          <p class="don-hero__sub">Donations open until the season ends — December 31, 2026. 100% of every dollar reaches our verified charity partners.</p>
+
+          <!-- PROGRESS BAR -->
+          <div class="don-progress">
+            <div class="don-progress__header">
+              <span class="don-progress__raised"><span id="raisedAmount">$48,200</span> raised</span>
+              <span class="don-progress__goal">Goal: $75,000</span>
+            </div>
+            <div class="don-progress__bar">
+              <div class="don-progress__fill" id="progressFill" style="width: 64.3%"></div>
+            </div>
+            <div class="don-progress__meta">
+              <span>64% of goal</span>
+              <span id="donorCount">3,840 donors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATION FORM + STATS -->
+    <section class="section" style="background:var(--bg-base)">
+      <div class="container">
+        <div class="don-layout">
+
+          <!-- FORM -->
+          <div class="don-form-wrap" data-reveal>
+            <h2 class="don-form__title">Make a Donation</h2>
+            <p class="don-form__sub">You don't need to be registered. Anyone can support the cause.</p>
+
+            <div class="don-presets">
+              <button class="don-preset" data-amount="5">$5</button>
+              <button class="don-preset" data-amount="10">$10</button>
+              <button class="don-preset don-preset--featured" data-amount="25">$25</button>
+              <button class="don-preset" data-amount="50">$50</button>
+              <button class="don-preset" data-amount="100">$100</button>
+            </div>
+
+            <div class="don-custom">
+              <label>Custom Amount</label>
+              <div class="don-custom__wrap">
+                <span>$</span>
+                <input type="number" id="donAmount" min="1" placeholder="Enter amount" />
+              </div>
+            </div>
+
+            <div class="don-pts-preview" id="donPtsPreview">
+              <span>🎖</span>
+              <span>This donation earns <strong id="donPts">5</strong> charity points (if registered)</span>
+            </div>
+
+            <form id="donForm">
+              <div class="form-grid" style="grid-template-columns:1fr">
+                <div class="form-field">
+                  <label for="donName">Your Name <span class="optional">(optional)</span></label>
+                  <input type="text" id="donName" placeholder="Show on leaderboard or stay anonymous" />
+                </div>
+                <div class="form-field">
+                  <label for="donEmail">Email Address <span class="optional">(optional — for receipt)</span></label>
+                  <input type="email" id="donEmail" placeholder="you@example.com" />
+                </div>
+              </div>
+              <label class="don-anon-check">
+                <input type="checkbox" id="donAnon" />
+                <span>Donate anonymously</span>
+              </label>
+              <button type="submit" class="btn btn--accent btn--lg" style="width:100%;justify-content:center;margin-top:1.5rem">
+                Donate Now ❤️
+              </button>
+            </form>
+
+            <div class="don-trust">
+              <span>🔒 Secure payment</span>
+              <span>📋 Receipt emailed</span>
+              <span>✅ 100% to charity</span>
+            </div>
+          </div>
+
+          <!-- STATS SIDEBAR -->
+          <div class="don-sidebar">
+
+            <div class="don-live" data-reveal>
+              <div class="don-live__head">
+                <span class="lb-live__dot" style="display:inline-block"></span>
+                Recent Donations
+              </div>
+              <div class="don-feed" id="donFeed"></div>
+            </div>
+
+            <div class="don-top" data-reveal>
+              <h4>Top Donors — Season 1</h4>
+              <ol class="don-top__list" id="donTopList"></ol>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSPARENCY -->
+    <section class="section don-transparency" style="background:var(--bg-surface)">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Transparency</span>
+          <h2 class="section-title">Where Your Money Goes</h2>
+          <p class="section-sub">Full distribution breakdown for Season 1 — Summer 2026</p>
+        </div>
+        <div class="don-distribution" data-reveal>
+          <div class="don-dist-item">
+            <div class="don-dist-bar" style="--pct:45%"><div class="don-dist-fill don-dist-fill--1"></div></div>
+            <div class="don-dist-label">
+              <strong>45%</strong>
+              <span>EduAccess Global — School supplies</span>
+            </div>
+          </div>
+          <div class="don-dist-item">
+            <div class="don-dist-bar" style="--pct:25%"><div class="don-dist-fill don-dist-fill--2"></div></div>
+            <div class="don-dist-label">
+              <strong>25%</strong>
+              <span>Clean Water Initiative</span>
+            </div>
+          </div>
+          <div class="don-dist-item">
+            <div class="don-dist-bar" style="--pct:20%"><div class="don-dist-fill don-dist-fill--3"></div></div>
+            <div class="don-dist-label">
+              <strong>20%</strong>
+              <span>OpenBooks Foundation</span>
+            </div>
+          </div>
+          <div class="don-dist-item">
+            <div class="don-dist-bar" style="--pct:10%"><div class="don-dist-fill don-dist-fill--4"></div></div>
+            <div class="don-dist-label">
+              <strong>10%</strong>
+              <span>Youth STEM Africa</span>
+            </div>
+          </div>
+        </div>
+        <p class="don-transparency__note" data-reveal>Quarterly reports published at <a href="#">transparency.ico-olympiad.org</a> — every transaction audited by an independent accountant.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">⚡ ICO</div>
+          <p>International Charity Olympiad — competing for a better world.</p>
+        </div>
+        <div class="footer__col"><h5>Platform</h5><a href="index.html">About</a><a href="register.html">Register</a><a href="organisers.html">Exams</a><a href="leaderboard.html">Leaderboard</a><a href="donate.html">Donate</a></div>
+        <div class="footer__col"><h5>Subjects</h5><a href="#">Chemistry</a><a href="#">Mathematics</a><a href="#">Physics</a><a href="#">Biology</a></div>
+        <div class="footer__col"><h5>Contact</h5><a href="mailto:info@ico-olympiad.org">info@ico-olympiad.org</a></div>
+      </div>
+      <div class="footer__bottom"><p>© 2026 International Charity Olympiad.</p><p>Season 1 — Summer 2026</p></div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/donate.js"></script>
+</body>
+</html>
