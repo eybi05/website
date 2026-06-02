@@ -1,3 +1,7 @@
+// Pre-fill referral code from URL ?ref= param
+const urlRef = new URLSearchParams(window.location.search).get('ref');
+if (urlRef) { const el = document.getElementById('referral'); if (el) el.value = urlRef; }
+
 document.getElementById('regForm')?.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -57,5 +61,5 @@ document.getElementById('regForm')?.addEventListener('submit', async (e) => {
     return;
   }
 
-  window.location.href = 'login.html?registered=1';
+  window.location.href = 'success.html';
 });

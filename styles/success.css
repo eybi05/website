@@ -1,0 +1,99 @@
+.success-page {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+  background: var(--bg-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.success-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+.success-glow--1 { width:500px;height:500px;background:radial-gradient(circle,rgba(104,211,145,0.15),transparent 65%);top:-100px;left:50%;transform:translateX(-50%); }
+.success-glow--2 { width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.12),transparent 65%);bottom:-80px;right:-80px; }
+
+.success-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem,6vw,3.5rem);
+  width: min(520px,100%);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-card);
+}
+
+.success-icon {
+  width: 72px; height: 72px;
+  background: rgba(104,211,145,0.12);
+  border: 2px solid rgba(104,211,145,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1.75rem;
+}
+
+.success-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.success-sub {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.success-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.success-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.success-step__num {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--grad-hero);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.success-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

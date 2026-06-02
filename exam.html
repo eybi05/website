@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Exam â€” ICO</title>
+  <meta name="description" content="Access your ICO Season 1 exam." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles/tokens.css" /><link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/nav.css" /><link rel="stylesheet" href="styles/exam.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <meta name="description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad — Season 1, Summer 2026." />
+  <meta property="og:title" content="My Exam — ICO" />
+  <meta property="og:description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad — Season 1, Summer 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://internation-steel.vercel.app/exam.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="My Exam — ICO" />
+  <meta name="twitter:description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad — Season 1, Summer 2026." /></head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><span class="nav__logo-icon">âš¡</span><span>ICO</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">About</a></li>
+        <li><a href="register.html" class="nav__link">Register</a></li>
+        <li><a href="organisers.html" class="nav__link nav__link--active">Exams</a></li>
+        <li><a href="leaderboard.html" class="nav__link">Leaderboard</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme"><span class="btn-theme__icon">â˜€</span></button>
+        <span class="nav__user" id="navUserLabel" style="display:none"></span>
+        <button class="btn btn--ghost btn--sm" id="navLogoutBtn" style="display:none">Logout</button>
+        <a href="login.html" class="btn btn--ghost btn--sm" id="navLoginBtn">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm" id="navRegisterBtn">Register</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="exam-page">
+    <div class="container">
+
+      <div class="exam-header">
+        <span class="section-tag exam-header__tag">Season 1 â€” Summer 2026</span>
+        <h1 class="exam-title">Your Exam Portal</h1>
+        <p class="exam-sub">Exams open July 15, 2026. Select your subject below to lock in your track.</p>
+      </div>
+
+      <div class="exam-status-badge">â³ Upcoming â€” Opens July 15, 2026</div>
+
+      <div class="exam-countdown">
+        <div class="exam-countdown__unit"><span class="exam-countdown__num" id="cdDays">â€”</span><span class="exam-countdown__label">Days</span></div>
+        <div class="exam-countdown__unit"><span class="exam-countdown__num" id="cdHours">â€”</span><span class="exam-countdown__label">Hours</span></div>
+        <div class="exam-countdown__unit"><span class="exam-countdown__num" id="cdMins">â€”</span><span class="exam-countdown__label">Minutes</span></div>
+        <div class="exam-countdown__unit"><span class="exam-countdown__num" id="cdSecs">â€”</span><span class="exam-countdown__label">Seconds</span></div>
+      </div>
+
+      <div class="exam-grid">
+
+        <!-- Subject picker -->
+        <div class="exam-card">
+          <div class="exam-card__title">Choose Your Subject</div>
+          <div class="exam-subjects">
+            <label class="exam-subject-card">
+              <input type="radio" name="subject" value="chemistry" />
+              <div class="exam-subject-card__inner"><span class="exam-subject-card__icon">âš—ï¸</span><span class="exam-subject-card__name">Chemistry</span></div>
+            </label>
+            <label class="exam-subject-card">
+              <input type="radio" name="subject" value="mathematics" />
+              <div class="exam-subject-card__inner"><span class="exam-subject-card__icon">ðŸ“</span><span class="exam-subject-card__name">Mathematics</span></div>
+            </label>
+            <label class="exam-subject-card">
+              <input type="radio" name="subject" value="physics" />
+              <div class="exam-subject-card__inner"><span class="exam-subject-card__icon">âš›ï¸</span><span class="exam-subject-card__name">Physics</span></div>
+            </label>
+            <label class="exam-subject-card">
+              <input type="radio" name="subject" value="biology" />
+              <div class="exam-subject-card__inner"><span class="exam-subject-card__icon">ðŸ§¬</span><span class="exam-subject-card__name">Biology</span></div>
+            </label>
+          </div>
+          <button class="exam-save-btn" id="saveSubjectBtn">Save Subject</button>
+          <div class="exam-saved-msg" id="savedMsg"></div>
+        </div>
+
+        <!-- Exam format -->
+        <div class="exam-card">
+          <div class="exam-card__title">Exam Format</div>
+          <div class="exam-format-item"><div class="exam-format-item__icon">ðŸ“</div><div><div class="exam-format-item__label">Round 1 â€” MCQ</div><div class="exam-format-item__val">150 pts Â· 60 questions Â· Timed Â· Auto-graded within 24 hours</div></div></div>
+          <div class="exam-format-item"><div class="exam-format-item__icon">âœï¸</div><div><div class="exam-format-item__label">Round 2 â€” FRQ</div><div class="exam-format-item__val">300 pts Â· Free-response Â· AI-assisted + manual grading Â· 7 days</div></div></div>
+          <div class="exam-format-item"><div class="exam-format-item__icon">ðŸ†</div><div><div class="exam-format-item__label">Total</div><div class="exam-format-item__val">450 pts academic Â· Ranked separately from charity contributions</div></div></div>
+          <div class="exam-format-item"><div class="exam-format-item__icon">ðŸ“œ</div><div><div class="exam-format-item__label">Certificate</div><div class="exam-format-item__val">Downloadable PDF issued to all participants upon completion</div></div></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script><script src="js/nav.js"></script>
+  <script src="js/exam.js"></script>
+  <script src="js/auth-nav.js"></script>
+</body>
+</html>
+

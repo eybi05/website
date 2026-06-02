@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard â€” ICO</title>
+  <meta name="description" content="Your ICO participant dashboard." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles/tokens.css" /><link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/nav.css" /><link rel="stylesheet" href="styles/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <meta name="description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad — Season 1, Summer 2026." />
+  <meta property="og:title" content="Dashboard — ICO" />
+  <meta property="og:description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad — Season 1, Summer 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://internation-steel.vercel.app/dashboard.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Dashboard — ICO" />
+  <meta name="twitter:description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad — Season 1, Summer 2026." /></head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><span class="nav__logo-icon">âš¡</span><span>ICO</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">About</a></li>
+        <li><a href="register.html" class="nav__link">Register</a></li>
+        <li><a href="organisers.html" class="nav__link">Exams</a></li>
+        <li><a href="leaderboard.html" class="nav__link">Leaderboard</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme"><span class="btn-theme__icon">â˜€</span></button>
+        <span class="nav__user" id="navUserLabel" style="display:none"></span>
+        <button class="btn btn--ghost btn--sm" id="navLogoutBtn" style="display:none">Logout</button>
+        <a href="login.html" class="btn btn--ghost btn--sm" id="navLoginBtn">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm" id="navRegisterBtn">Register</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="dash-page">
+    <div class="container">
+
+      <div class="dash-header">
+        <p class="dash-welcome">Welcome back</p>
+        <h1 class="dash-title">Hello, <span id="dashName">â€¦</span></h1>
+      </div>
+
+      <div class="dash-stats">
+        <div class="dash-stat">
+          <div class="dash-stat__label">Charity Points</div>
+          <div class="dash-stat__value dash-stat__value--gold" id="dashPoints">â€”</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat__label">Referrals Made</div>
+          <div class="dash-stat__value dash-stat__value--blue" id="dashReferrals">â€”</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat__label">Season</div>
+          <div class="dash-stat__value">1</div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+
+        <!-- Referral card -->
+        <div class="dash-card">
+          <div class="dash-card__title">Your Referral Code</div>
+          <div class="dash-referral-code">
+            <span class="dash-referral-code__val" id="dashRefCode">ICO-â€¦â€¦</span>
+            <button class="dash-copy-btn" id="copyCodeBtn">Copy code</button>
+          </div>
+          <div class="dash-referral-link">
+            Share link: <span id="dashRefLink">â€”</span>
+            <button class="dash-copy-btn" id="copyLinkBtn" style="margin-left:0.5rem">Copy link</button>
+          </div>
+          <p class="dash-referral-sub">Every friend who registers with your code earns you <strong>+2 charity points</strong> automatically.</p>
+        </div>
+
+        <!-- Profile -->
+        <div class="dash-card">
+          <div class="dash-card__title">Your Profile</div>
+          <div class="dash-profile-field"><div class="dash-profile-field__label">Full Name</div><div class="dash-profile-field__val" id="dashFullName">â€”</div></div>
+          <div class="dash-profile-field"><div class="dash-profile-field__label">Country</div><div class="dash-profile-field__val" id="dashCountry">â€”</div></div>
+          <div class="dash-profile-field"><div class="dash-profile-field__label">School</div><div class="dash-profile-field__val" id="dashSchool">â€”</div></div>
+          <div class="dash-profile-field"><div class="dash-profile-field__label">Subject</div><div class="dash-profile-field__val" id="dashSubject">â€”</div></div>
+          <div class="dash-profile-field"><div class="dash-profile-field__label">Registered</div><div class="dash-profile-field__val" id="dashDate">â€”</div></div>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="dash-card">
+          <div class="dash-card__title">Quick Actions</div>
+          <div class="dash-actions">
+            <a href="exam.html" class="dash-action"><span>ðŸ“ My Exam</span><span class="dash-action__arrow">â†’</span></a>
+            <a href="leaderboard.html" class="dash-action"><span>ðŸ† Leaderboard</span><span class="dash-action__arrow">â†’</span></a>
+            <a href="donate.html" class="dash-action"><span>â¤ï¸ Make a Donation</span><span class="dash-action__arrow">â†’</span></a>
+            <a href="organisers.html" class="dash-action"><span>ðŸ“š View Exams</span><span class="dash-action__arrow">â†’</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script><script src="js/nav.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/auth-nav.js"></script>
+</body>
+</html>
+
