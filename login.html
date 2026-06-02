@@ -36,40 +36,103 @@
   </nav>
 
   <main class="login-page">
-    <div class="login-glow login-glow--1"></div>
-    <div class="login-glow login-glow--2"></div>
 
-    <div class="login-card" data-reveal>
-      <div class="login-brand">⚡ ICO</div>
-      <h1 class="login-title">Welcome back</h1>
-      <p class="login-sub">Sign in to your ICO account</p>
+    <!-- LEFT PANEL -->
+    <div class="login-left">
+      <div class="login-left__grid"></div>
+      <div class="login-left__glow"></div>
 
-      <form id="loginForm" novalidate>
-        <div class="form-field">
-          <label for="loginEmail">Email Address</label>
-          <input type="email" id="loginEmail" placeholder="jane@example.com" required autocomplete="email" />
-        </div>
-        <div class="form-field" style="margin-top:1rem">
-          <label for="loginPassword">Password</label>
-          <input type="password" id="loginPassword" placeholder="Your password" required autocomplete="current-password" />
+      <div class="login-left__content">
+        <div class="login-left__logo">
+          <span class="login-left__logo-icon">⚡</span>
+          <span>ICO</span>
         </div>
 
-        <div class="form-error" id="loginError"></div>
+        <h2 class="login-left__title">
+          Compete Globally.<br />
+          <em>Support Meaningfully.</em>
+        </h2>
+        <p class="login-left__sub">
+          The International Charity Olympiad — where academic excellence meets real-world impact.
+        </p>
 
-        <button type="submit" class="btn btn--primary btn--lg login-submit">Sign In →</button>
-      </form>
-
-      <p class="login-footer">
-        Don't have an account? <a href="register.html">Register here</a>
-      </p>
+        <div class="login-left__stats">
+          <div class="login-left__stat">
+            <span class="login-left__stat-num">12,400+</span>
+            <span class="login-left__stat-label">Participants</span>
+          </div>
+          <div class="login-left__stat-sep"></div>
+          <div class="login-left__stat">
+            <span class="login-left__stat-num">87</span>
+            <span class="login-left__stat-label">Countries</span>
+          </div>
+          <div class="login-left__stat-sep"></div>
+          <div class="login-left__stat">
+            <span class="login-left__stat-num">$48k+</span>
+            <span class="login-left__stat-label">Raised</span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="login-right">
+      <div class="login-form-wrap">
+
+        <div class="login-header">
+          <h1 class="login-title">Welcome back</h1>
+          <p class="login-sub">Sign in to your ICO account</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+
+          <div class="login-field">
+            <label for="loginEmail">Email Address</label>
+            <div class="login-field__input-wrap">
+              <svg class="login-field__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 5.5A1.5 1.5 0 014 4h12a1.5 1.5 0 011.5 1.5v9A1.5 1.5 0 0116 16H4a1.5 1.5 0 01-1.5-1.5v-9z" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M2.5 6l7.072 4.714a.8.8 0 00.856 0L17.5 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+              <input type="email" id="loginEmail" placeholder="jane@example.com" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="loginPassword">Password</label>
+            <div class="login-field__input-wrap">
+              <svg class="login-field__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.5" y="9" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M6.5 9V6.5a3.5 3.5 0 017 0V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="10" cy="13.25" r="1.25" fill="currentColor"/>
+              </svg>
+              <input type="password" id="loginPassword" placeholder="Your password" required autocomplete="current-password" />
+            </div>
+          </div>
+
+          <div class="form-error" id="loginError"></div>
+
+          <button type="submit" class="login-btn">
+            <span>Sign In</span>
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+        </form>
+
+        <div class="login-divider"><span>New to ICO?</span></div>
+
+        <a href="register.html" class="login-register-btn">Create a free account</a>
+
+      </div>
+    </div>
+
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-config.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/nav.js"></script>
-  <script src="js/reveal.js"></script>
   <script src="js/login.js"></script>
   <script src="js/auth-nav.js"></script>
 </body>
