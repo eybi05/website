@@ -5,9 +5,13 @@ db.auth.onAuthStateChange((_event, session) => {
   const logoutBtn   = document.getElementById('navLogoutBtn');
   const userLabel   = document.getElementById('navUserLabel');
 
+  // Also target the "Register" link inside the nav menu list
+  const registerLi  = document.querySelector('.nav__links a[href="register.html"]')?.parentElement;
+
   if (user) {
     if (loginBtn)    loginBtn.style.display    = 'none';
     if (registerBtn) registerBtn.style.display = 'none';
+    if (registerLi)  registerLi.style.display  = 'none';
     if (logoutBtn)   logoutBtn.style.display   = '';
     if (userLabel) {
       userLabel.style.display = '';
@@ -16,6 +20,7 @@ db.auth.onAuthStateChange((_event, session) => {
   } else {
     if (loginBtn)    loginBtn.style.display    = '';
     if (registerBtn) registerBtn.style.display = '';
+    if (registerLi)  registerLi.style.display  = '';
     if (logoutBtn)   logoutBtn.style.display   = 'none';
     if (userLabel)   userLabel.style.display   = 'none';
   }
