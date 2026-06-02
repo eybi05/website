@@ -1,0 +1,168 @@
+.funding-page {
+  padding-top: 6rem;
+  padding-bottom: var(--space-section);
+  min-height: 100svh;
+}
+
+.funding-container {
+  width: min(740px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+/* Header */
+.funding-header {
+  padding-block: 4rem 3.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3.5rem;
+}
+
+.funding-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-block: 1rem 1.25rem;
+}
+
+.funding-lead {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 58ch;
+}
+
+/* Sections */
+.funding-section {
+  padding-block: 2.5rem;
+}
+
+.funding-section h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.funding-section p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.funding-section p:last-child { margin-bottom: 0; }
+
+.funding-rule {
+  height: 1px;
+  background: var(--border);
+}
+
+/* List */
+.funding-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-block: 0.5rem 1.25rem;
+}
+
+.funding-list li {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.funding-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  opacity: 0.7;
+}
+
+/* Revenue bars */
+.funding-split-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.funding-bar {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.4rem 1rem;
+  align-items: center;
+}
+
+.funding-bar__pct {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  line-height: 1;
+  grid-row: 1;
+}
+
+.funding-bar__pct--charity { color: var(--accent-green); }
+.funding-bar__pct--team    { color: var(--accent-blue); }
+
+.funding-bar__track {
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  grid-row: 1;
+}
+
+.funding-bar__fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s var(--ease-out);
+}
+
+.funding-bar__fill--charity {
+  background: linear-gradient(90deg, var(--accent-green), oklch(72% 0.18 155));
+}
+
+.funding-bar__fill--team {
+  background: var(--grad-hero);
+}
+
+.funding-bar__label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+}
+
+/* Mission quote */
+.funding-quote {
+  border-left: 3px solid var(--accent-blue);
+  margin: 0;
+  padding: 1rem 0 1rem 1.75rem;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* CTA */
+.funding-cta {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-top: 3rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+}
