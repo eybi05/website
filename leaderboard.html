@@ -1,209 +1,209 @@
-﻿<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leaderboard â€” ICO</title>
+?<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard — ICO</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles/tokens.css" />
-  <link rel="stylesheet" href="styles/global.css" />
-  <link rel="stylesheet" href="styles/nav.css" />
-  <link rel="stylesheet" href="styles/leaderboard.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
-  <meta name="description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad — Season 1, Summer 2026." />
-  <meta property="og:title" content="Leaderboard — ICO" />
-  <meta property="og:description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad — Season 1, Summer 2026." />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/leaderboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <meta name="description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad � Season 1, Summer 2026." />
+  <meta property="og:title" content="Leaderboard � ICO" />
+  <meta property="og:description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad � Season 1, Summer 2026." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://internation-steel.vercel.app/leaderboard.html" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Leaderboard — ICO" />
-  <meta name="twitter:description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad — Season 1, Summer 2026." /></head>
-<body>
-
-  <nav class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo"><span class="nav__logo-icon">âš¡</span><span>ICO</span></a>
-      <ul class="nav__links">
-        <li><a href="index.html" class="nav__link">About</a></li>
-        <li><a href="register.html" class="nav__link">Register</a></li>
-        <li><a href="organisers.html" class="nav__link">Exams</a></li>
-        <li><a href="leaderboard.html" class="nav__link nav__link--active">Leaderboard</a></li>
-        <li><a href="donate.html" class="nav__link">Donate</a></li>
-      </ul>
-      <div class="nav__actions">
-        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme"><span class="btn-theme__icon">â˜€</span></button>
-        <span class="nav__user" id="navUserLabel" style="display:none"></span>
-        <button class="btn btn--ghost btn--sm" id="navLogoutBtn" style="display:none">Logout</button>
-        <a href="login.html" class="btn btn--ghost btn--sm" id="navLoginBtn">Login</a>
-        <a href="register.html" class="btn btn--primary btn--sm" id="navRegisterBtn">Register</a>
-      </div>
-      <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-
-  <main class="lb-page">
-    <div class="lb-page__glow"></div>
-    <div class="container">
-
-      <div class="lb-header">
-        <span class="section-tag">Live Rankings</span>
-        <h1 class="lb-title">Global Leaderboard</h1>
-        <p class="lb-sub">Rankings update in real time. Academic and charity scores are always displayed separately.</p>
-        <div class="lb-live">
-          <span class="lb-live__dot"></span>
-          Live â€” Last updated just now
-        </div>
-      </div>
-
-      <!-- TABS -->
-      <div class="lb-tabs" role="tablist">
-        <button class="lb-tab lb-tab--active" data-tab="individual" role="tab">Individual</button>
-        <button class="lb-tab" data-tab="country" role="tab">Country</button>
-        <button class="lb-tab" data-tab="charity" role="tab">Charity Ranking</button>
-        <button class="lb-tab" data-tab="impact" role="tab">Impact Recognition</button>
-      </div>
-
-      <!-- FILTERS -->
-      <div class="lb-filters" id="individualFilters">
-        <select class="lb-filter-select" id="subjectFilter">
-          <option value="all">All Subjects</option>
-          <option value="chemistry">Chemistry</option>
-          <option value="mathematics">Mathematics</option>
-          <option value="physics">Physics</option>
-          <option value="biology">Biology</option>
-        </select>
-        <select class="lb-filter-select" id="roundFilter">
-          <option value="overall">Exam Overall</option>
-          <option value="round1">Round 1 (MCQ)</option>
-          <option value="round2">Round 2 (FRQ)</option>
-        </select>
-        <input class="lb-search" type="search" placeholder="Search participantâ€¦" id="lbSearch" />
-      </div>
-
-      <!-- PODIUM (top 3) -->
-      <div class="lb-podium" id="podium">
-        <div class="podium-item podium-item--2" data-reveal>
-          <div class="podium-avatar">NK</div>
-          <div class="podium-name">N. KovÃ¡cs</div>
-          <div class="podium-country">ðŸ‡­ðŸ‡º HU</div>
-          <div class="podium-score">432</div>
-          <div class="podium-rank">2</div>
-        </div>
-        <div class="podium-item podium-item--1" data-reveal>
-          <div class="podium-crown">ðŸ‘‘</div>
-          <div class="podium-avatar">AZ</div>
-          <div class="podium-name">A. Zhao</div>
-          <div class="podium-country">ðŸ‡¨ðŸ‡³ CN</div>
-          <div class="podium-score">448</div>
-          <div class="podium-rank">1</div>
-        </div>
-        <div class="podium-item podium-item--3" data-reveal>
-          <div class="podium-avatar">RP</div>
-          <div class="podium-name">R. Patel</div>
-          <div class="podium-country">ðŸ‡®ðŸ‡³ IN</div>
-          <div class="podium-score">429</div>
-          <div class="podium-rank">3</div>
-        </div>
-      </div>
-
-      <!-- TABLE -->
-      <div class="lb-table-wrap">
-        <table class="lb-table" id="lbTable">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Participant</th>
-              <th>Country</th>
-              <th>Subject</th>
-              <th>R1</th>
-              <th>R2</th>
-              <th class="col-total">Total</th>
-              <th>Charity pts</th>
-            </tr>
-          </thead>
-          <tbody id="lbBody">
-          </tbody>
-        </table>
-      </div>
-
-      <!-- COUNTRY TABLE (hidden by default) -->
-      <div class="lb-table-wrap hidden" id="countryTable">
-        <table class="lb-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Country</th>
-              <th>Participants</th>
-              <th>Avg Academic Score</th>
-              <th>Total Charity Points</th>
-            </tr>
-          </thead>
-          <tbody id="countryBody"></tbody>
-        </table>
-      </div>
-
-      <!-- CHARITY TABLE -->
-      <div class="lb-table-wrap hidden" id="charityTable">
-        <table class="lb-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Participant</th>
-              <th>Country</th>
-              <th>Charity Points</th>
-              <th>Donations</th>
-            </tr>
-          </thead>
-          <tbody id="charityBody"></tbody>
-        </table>
-      </div>
-
-      <!-- IMPACT TABLE -->
-      <div class="lb-table-wrap hidden" id="impactTable">
-        <div class="lb-notice">
-          <strong>â„¹ Impact Recognition Ranking</strong>
-          <p>Celebrates participants who combine academic excellence with charitable generosity. Academic and charity scores are kept separate â€” donations do not affect your academic rank.</p>
-        </div>
-        <table class="lb-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Participant</th>
-              <th>Country</th>
-              <th>Academic Score</th>
-              <th>Charity Points</th>
-              <th>Impact Score</th>
-            </tr>
-          </thead>
-          <tbody id="impactBody"></tbody>
-        </table>
-      </div>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <div class="footer__logo">âš¡ ICO</div>
-          <p>International Charity Olympiad â€” competing for a better world.</p>
-        </div>
-        <div class="footer__col"><h5>Platform</h5><a href="index.html">About</a><a href="register.html">Register</a><a href="organisers.html">Exams</a><a href="leaderboard.html">Leaderboard</a><a href="donate.html">Donate</a></div>
-        <div class="footer__col"><h5>Subjects</h5><a href="#">Chemistry</a><a href="#">Mathematics</a><a href="#">Physics</a><a href="#">Biology</a></div>
-        <div class="footer__col"><h5>Legal</h5><a href="funding.html">How We Work</a><a href="mailto:info@ico-olympiad.org">info@ico-olympiad.org</a></div>
-      </div>
-      <div class="footer__bottom"><p>Â© 2026 International Charity Olympiad.</p><p>Season 1 â€” Summer 2026</p></div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/supabase-config.js"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/reveal.js"></script>
-  <script src="js/leaderboard.js"></script>
-  <script src="js/auth-nav.js"></script>
-</body>
-</html>
-
+  <meta name="twitter:title" content="Leaderboard � ICO" />
+  <meta name="twitter:description" content="Compete Globally. Support Meaningfully. The International Charity Olympiad � Season 1, Summer 2026." /></head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><span class="nav__logo-icon">⚡</span><span>ICO</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">About</a></li>
+        <li><a href="register.html" class="nav__link">Register</a></li>
+        <li><a href="organisers.html" class="nav__link">Exams</a></li>
+        <li><a href="leaderboard.html" class="nav__link nav__link--active">Leaderboard</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme"><span class="btn-theme__icon">☀</span></button>
+        <span class="nav__user" id="navUserLabel" style="display:none"></span>
+        <button class="btn btn--ghost btn--sm" id="navLogoutBtn" style="display:none">Logout</button>
+        <a href="login.html" class="btn btn--ghost btn--sm" id="navLoginBtn">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm" id="navRegisterBtn">Register</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="lb-page">
+    <div class="lb-page__glow"></div>
+    <div class="container">
+
+      <div class="lb-header">
+        <span class="section-tag">Live Rankings</span>
+        <h1 class="lb-title">Global Leaderboard</h1>
+        <p class="lb-sub">Rankings update in real time. Academic and charity scores are always displayed separately.</p>
+        <div class="lb-live">
+          <span class="lb-live__dot"></span>
+          Live — Last updated just now
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="lb-tabs" role="tablist">
+        <button class="lb-tab lb-tab--active" data-tab="individual" role="tab">Individual</button>
+        <button class="lb-tab" data-tab="country" role="tab">Country</button>
+        <button class="lb-tab" data-tab="charity" role="tab">Charity Ranking</button>
+        <button class="lb-tab" data-tab="impact" role="tab">Impact Recognition</button>
+      </div>
+
+      <!-- FILTERS -->
+      <div class="lb-filters" id="individualFilters">
+        <select class="lb-filter-select" id="subjectFilter">
+          <option value="all">All Subjects</option>
+          <option value="chemistry">Chemistry</option>
+          <option value="mathematics">Mathematics</option>
+          <option value="physics">Physics</option>
+          <option value="biology">Biology</option>
+        </select>
+        <select class="lb-filter-select" id="roundFilter">
+          <option value="overall">Exam Overall</option>
+          <option value="round1">Round 1 (MCQ)</option>
+          <option value="round2">Round 2 (FRQ)</option>
+        </select>
+        <input class="lb-search" type="search" placeholder="Search participant…" id="lbSearch" />
+      </div>
+
+      <!-- PODIUM (top 3) -->
+      <div class="lb-podium" id="podium">
+        <div class="podium-item podium-item--2" data-reveal>
+          <div class="podium-avatar">NK</div>
+          <div class="podium-name">N. Kovács</div>
+          <div class="podium-country">🇭🇺 HU</div>
+          <div class="podium-score">432</div>
+          <div class="podium-rank">2</div>
+        </div>
+        <div class="podium-item podium-item--1" data-reveal>
+          <div class="podium-crown">👑</div>
+          <div class="podium-avatar">AZ</div>
+          <div class="podium-name">A. Zhao</div>
+          <div class="podium-country">🇨🇳 CN</div>
+          <div class="podium-score">448</div>
+          <div class="podium-rank">1</div>
+        </div>
+        <div class="podium-item podium-item--3" data-reveal>
+          <div class="podium-avatar">RP</div>
+          <div class="podium-name">R. Patel</div>
+          <div class="podium-country">🇮🇳 IN</div>
+          <div class="podium-score">429</div>
+          <div class="podium-rank">3</div>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="lb-table-wrap">
+        <table class="lb-table" id="lbTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Participant</th>
+              <th>Country</th>
+              <th>Subject</th>
+              <th>R1</th>
+              <th>R2</th>
+              <th class="col-total">Total</th>
+              <th>Charity pts</th>
+            </tr>
+          </thead>
+          <tbody id="lbBody">
+          </tbody>
+        </table>
+      </div>
+
+      <!-- COUNTRY TABLE (hidden by default) -->
+      <div class="lb-table-wrap hidden" id="countryTable">
+        <table class="lb-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Country</th>
+              <th>Participants</th>
+              <th>Avg Academic Score</th>
+              <th>Total Charity Points</th>
+            </tr>
+          </thead>
+          <tbody id="countryBody"></tbody>
+        </table>
+      </div>
+
+      <!-- CHARITY TABLE -->
+      <div class="lb-table-wrap hidden" id="charityTable">
+        <table class="lb-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Participant</th>
+              <th>Country</th>
+              <th>Charity Points</th>
+              <th>Donations</th>
+            </tr>
+          </thead>
+          <tbody id="charityBody"></tbody>
+        </table>
+      </div>
+
+      <!-- IMPACT TABLE -->
+      <div class="lb-table-wrap hidden" id="impactTable">
+        <div class="lb-notice">
+          <strong>ℹ Impact Recognition Ranking</strong>
+          <p>Celebrates participants who combine academic excellence with charitable generosity. Academic and charity scores are kept separate — donations do not affect your academic rank.</p>
+        </div>
+        <table class="lb-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Participant</th>
+              <th>Country</th>
+              <th>Academic Score</th>
+              <th>Charity Points</th>
+              <th>Impact Score</th>
+            </tr>
+          </thead>
+          <tbody id="impactBody"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">⚡ ICO</div>
+          <p>International Charity Olympiad — competing for a better world.</p>
+        </div>
+        <div class="footer__col"><h5>Platform</h5><a href="index.html">About</a><a href="register.html">Register</a><a href="organisers.html">Exams</a><a href="leaderboard.html">Leaderboard</a><a href="donate.html">Donate</a></div>
+        <div class="footer__col"><h5>Subjects</h5><a href="#">Chemistry</a><a href="#">Mathematics</a><a href="#">Physics</a><a href="#">Biology</a></div>
+        <div class="footer__col"><h5>Legal</h5><a href="funding.html">How We Work</a><a href="mailto:info@ico-olympiad.org">info@ico-olympiad.org</a></div>
+      </div>
+      <div class="footer__bottom"><p>© 2026 International Charity Olympiad.</p><p>Season 1 — Summer 2026</p></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/auth-nav.js"></script>
+</body>
+</html>
+
