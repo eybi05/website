@@ -1,8 +1,8 @@
 document.getElementById('regForm')?.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const btn      = e.submitter;
-  const errorEl  = document.getElementById('regError');
+  const btn     = e.submitter;
+  const errorEl = document.getElementById('regError');
 
   const fullName = document.getElementById('fullName').value.trim();
   const email    = document.getElementById('email').value.trim();
@@ -11,7 +11,6 @@ document.getElementById('regForm')?.addEventListener('submit', async (e) => {
   const password = document.getElementById('password').value;
   const confirm  = document.getElementById('confirm').value;
   const referral = document.getElementById('referral').value.trim();
-  const subject  = document.querySelector('input[name="subject"]:checked')?.value;
 
   if (errorEl) errorEl.textContent = '';
 
@@ -27,35 +26,26 @@ document.getElementById('regForm')?.addEventListener('submit', async (e) => {
     if (errorEl) errorEl.textContent = 'Passwords do not match.';
     return;
   }
-  if (!subject) {
-    if (errorEl) errorEl.textContent = 'Please select a subject.';
-    return;
-  }
 
   btn.disabled = true;
   btn.textContent = 'Registering…';
 
-  const { data, error } = await db.auth.signUp({ email, password });
+  // All profile data goes into user metadata — the database trigger creates the profile row
+  const { error } = await db.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        full_name:     fullName,
+        country,
+        school,
+        referral_code: referral || null,
+      },
+    },
+  });
 
   if (error) {
     if (errorEl) errorEl.textContent = error.message;
-    btn.disabled = false;
-    btn.textContent = 'Register Now →';
-    return;
-  }
-
-  const { error: profileError } = await db.from('profiles').insert({
-    id:            data.user.id,
-    full_name:     fullName,
-    country,
-    school,
-    subject,
-    referral_code: referral || null,
-    charity_points: 5,
-  });
-
-  if (profileError) {
-    if (errorEl) errorEl.textContent = profileError.message;
     btn.disabled = false;
     btn.textContent = 'Register Now →';
     return;
