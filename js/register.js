@@ -45,7 +45,13 @@ document.getElementById('regForm')?.addEventListener('submit', async (e) => {
   });
 
   if (error) {
-    if (errorEl) errorEl.textContent = error.message;
+    const msg = error.message.toLowerCase();
+    if (errorEl) errorEl.textContent =
+      msg.includes('rate limit') || msg.includes('email rate')
+        ? 'Too many attempts. Please wait a few minutes and try again.'
+        : msg.includes('already registered') || msg.includes('already exists')
+        ? 'An account with this email already exists. Try logging in.'
+        : error.message;
     btn.disabled = false;
     btn.textContent = 'Register Now →';
     return;
