@@ -37,118 +37,146 @@
     <div class="container">
       <div class="reg-layout">
 
-        <!-- LEFT INFO PANEL -->
-        <aside class="reg-info" data-reveal>
-          <span class="section-tag">Join the Olympiad</span>
-          <h1 class="reg-info__title">Start Your Journey</h1>
-          <p class="reg-info__sub">Register, pick your subject, and compete globally — while contributing to a cause that matters.</p>
+        <!-- LEFT PANEL -->
+        <aside class="reg-panel" data-reveal>
+          <div class="reg-panel__logo">⚡ ICO</div>
+          <h1 class="reg-panel__title">Join the Olympiad</h1>
+          <p class="reg-panel__sub">Register for free, compete globally, and help make a difference.</p>
+
+          <div class="reg-subjects">
+            <div class="reg-subject-chip">⚗️ <span>Chemistry</span></div>
+            <div class="reg-subject-chip">📐 <span>Mathematics</span></div>
+            <div class="reg-subject-chip">⚛️ <span>Physics</span></div>
+            <div class="reg-subject-chip">🧬 <span>Biology</span></div>
+          </div>
 
           <div class="reg-perks">
             <div class="reg-perk">
-              <div class="reg-perk__icon">📜</div>
-              <div>
-                <strong>Official Certificate</strong>
-                <p>Downloadable PDF upon completion</p>
-              </div>
+              <div class="reg-perk__dot"></div>
+              <span>Official certificate upon completion</span>
             </div>
             <div class="reg-perk">
-              <div class="reg-perk__icon">🌐</div>
-              <div>
-                <strong>Global Leaderboard</strong>
-                <p>Rank among students in 87+ countries</p>
-              </div>
+              <div class="reg-perk__dot"></div>
+              <span>Rank among 12,400+ students worldwide</span>
             </div>
             <div class="reg-perk">
-              <div class="reg-perk__icon">❤️</div>
-              <div>
-                <strong>5 Charity Points</strong>
-                <p>Granted automatically on registration</p>
-              </div>
+              <div class="reg-perk__dot"></div>
+              <span>5 charity points granted on signup</span>
             </div>
             <div class="reg-perk">
-              <div class="reg-perk__icon">🔗</div>
-              <div>
-                <strong>Referral Link</strong>
-                <p>Earn +2 points per referral</p>
-              </div>
+              <div class="reg-perk__dot"></div>
+              <span>Earn +2 points per referral</span>
             </div>
           </div>
 
-          <div class="reg-free-badge">
-            <span>✅ Free Registration</span>
-          </div>
+          <div class="reg-free-badge">✅ Free Registration</div>
         </aside>
 
-        <!-- FORM PANEL -->
-        <div class="reg-form-wrap" data-reveal>
-          <form class="reg-form" id="regForm" novalidate>
-            <h2 class="reg-form__title">Create Your Account</h2>
+        <!-- FORM CARD -->
+        <div class="reg-card" data-reveal>
+          <h2 class="reg-card__title">Create Your Account</h2>
+
+          <form id="regForm" novalidate>
 
             <div class="form-grid">
+
               <div class="form-field">
                 <label for="fullName">Full Name <span class="required">*</span></label>
-                <input type="text" id="fullName" placeholder="Jane Doe" required />
+                <div class="field-wrap">
+                  <svg class="field-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.4"/><path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  <input type="text" id="fullName" placeholder="Jane Doe" required />
+                </div>
               </div>
+
               <div class="form-field">
                 <label for="email">Email Address <span class="required">*</span></label>
-                <input type="email" id="email" placeholder="jane@example.com" required />
+                <div class="field-wrap">
+                  <svg class="field-icon" viewBox="0 0 20 20" fill="none"><path d="M2.5 5.5A1.5 1.5 0 014 4h12a1.5 1.5 0 011.5 1.5v9A1.5 1.5 0 0116 16H4a1.5 1.5 0 01-1.5-1.5v-9z" stroke="currentColor" stroke-width="1.4"/><path d="M2.5 6l7.072 4.714a.8.8 0 00.856 0L17.5 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  <input type="email" id="email" placeholder="jane@example.com" required />
+                </div>
               </div>
+
               <div class="form-field">
                 <label for="country">Country <span class="required">*</span></label>
-                <select id="country" required>
-                  <option value="">Select your country…</option>
-                  <option>Afghanistan</option><option>Albania</option><option>Algeria</option>
-                  <option>Argentina</option><option>Armenia</option><option>Australia</option>
-                  <option>Austria</option><option>Azerbaijan</option><option>Bangladesh</option>
-                  <option>Belarus</option><option>Belgium</option><option>Bolivia</option>
-                  <option>Brazil</option><option>Bulgaria</option><option>Cambodia</option>
-                  <option>Canada</option><option>Chile</option><option>China</option>
-                  <option>Colombia</option><option>Croatia</option><option>Czech Republic</option>
-                  <option>Denmark</option><option>Ecuador</option><option>Egypt</option>
-                  <option>Estonia</option><option>Ethiopia</option><option>Finland</option>
-                  <option>France</option><option>Georgia</option><option>Germany</option>
-                  <option>Ghana</option><option>Greece</option><option>Hungary</option>
-                  <option>India</option><option>Indonesia</option><option>Iran</option>
-                  <option>Iraq</option><option>Ireland</option><option>Israel</option>
-                  <option>Italy</option><option>Japan</option><option>Jordan</option>
-                  <option>Kazakhstan</option><option>Kenya</option><option>Latvia</option>
-                  <option>Lebanon</option><option>Lithuania</option><option>Malaysia</option>
-                  <option>Mexico</option><option>Morocco</option><option>Netherlands</option>
-                  <option>New Zealand</option><option>Nigeria</option><option>Norway</option>
-                  <option>Pakistan</option><option>Peru</option><option>Philippines</option>
-                  <option>Poland</option><option>Portugal</option><option>Romania</option>
-                  <option>Russia</option><option>Saudi Arabia</option><option>Serbia</option>
-                  <option>Singapore</option><option>Slovakia</option><option>South Africa</option>
-                  <option>South Korea</option><option>Spain</option><option>Sri Lanka</option>
-                  <option>Sweden</option><option>Switzerland</option><option>Thailand</option>
-                  <option>Turkey</option><option>Ukraine</option><option>United Kingdom</option>
-                  <option>United States</option><option>Uzbekistan</option><option>Venezuela</option>
-                  <option>Vietnam</option>
-                </select>
+                <div class="field-wrap">
+                  <svg class="field-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/><path d="M10 2.5c0 0-3.5 3-3.5 7.5s3.5 7.5 3.5 7.5M10 2.5c0 0 3.5 3 3.5 7.5S10 17.5 10 17.5M2.5 10h15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  <select id="country" required>
+                    <option value="">Select your country…</option>
+                    <option>Afghanistan</option><option>Albania</option><option>Algeria</option>
+                    <option>Argentina</option><option>Armenia</option><option>Australia</option>
+                    <option>Austria</option><option>Azerbaijan</option><option>Bangladesh</option>
+                    <option>Belarus</option><option>Belgium</option><option>Bolivia</option>
+                    <option>Brazil</option><option>Bulgaria</option><option>Cambodia</option>
+                    <option>Canada</option><option>Chile</option><option>China</option>
+                    <option>Colombia</option><option>Croatia</option><option>Czech Republic</option>
+                    <option>Denmark</option><option>Ecuador</option><option>Egypt</option>
+                    <option>Estonia</option><option>Ethiopia</option><option>Finland</option>
+                    <option>France</option><option>Georgia</option><option>Germany</option>
+                    <option>Ghana</option><option>Greece</option><option>Hungary</option>
+                    <option>India</option><option>Indonesia</option><option>Iran</option>
+                    <option>Iraq</option><option>Ireland</option><option>Israel</option>
+                    <option>Italy</option><option>Japan</option><option>Jordan</option>
+                    <option>Kazakhstan</option><option>Kenya</option><option>Latvia</option>
+                    <option>Lebanon</option><option>Lithuania</option><option>Malaysia</option>
+                    <option>Mexico</option><option>Morocco</option><option>Netherlands</option>
+                    <option>New Zealand</option><option>Nigeria</option><option>Norway</option>
+                    <option>Pakistan</option><option>Peru</option><option>Philippines</option>
+                    <option>Poland</option><option>Portugal</option><option>Romania</option>
+                    <option>Russia</option><option>Saudi Arabia</option><option>Serbia</option>
+                    <option>Singapore</option><option>Slovakia</option><option>South Africa</option>
+                    <option>South Korea</option><option>Spain</option><option>Sri Lanka</option>
+                    <option>Sweden</option><option>Switzerland</option><option>Thailand</option>
+                    <option>Turkey</option><option>Ukraine</option><option>United Kingdom</option>
+                    <option>United States</option><option>Uzbekistan</option><option>Venezuela</option>
+                    <option>Vietnam</option>
+                  </select>
+                </div>
               </div>
+
               <div class="form-field">
                 <label for="school">School / Institution <span class="required">*</span></label>
-                <input type="text" id="school" placeholder="e.g. MIT, Baku State University" required />
+                <div class="field-wrap">
+                  <svg class="field-icon" viewBox="0 0 20 20" fill="none"><path d="M10 2L2 6l8 4 8-4-8-4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M2 10l8 4 8-4M2 14l8 4 8-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <input type="text" id="school" placeholder="e.g. MIT, Baku State University" required />
+                </div>
               </div>
+
               <div class="form-field">
                 <label for="password">Password <span class="required">*</span></label>
-                <input type="password" id="password" placeholder="Min. 8 characters" required minlength="8" />
+                <div class="field-wrap">
+                  <svg class="field-icon" viewBox="0 0 20 20" fill="none"><rect x="3.5" y="9" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 9V6.5a3.5 3.5 0 017 0V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="10" cy="13.25" r="1.25" fill="currentColor"/></svg>
+                  <input type="password" id="password" placeholder="Min. 8 characters" required minlength="8" />
+                </div>
               </div>
+
               <div class="form-field">
                 <label for="confirm">Confirm Password <span class="required">*</span></label>
-                <input type="password" id="confirm" placeholder="Repeat password" required />
+                <div class="field-wrap">
+                  <svg class="field-icon" viewBox="0 0 20 20" fill="none"><path d="M9 11l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2l1.5 1.5L13 2l1 1.5L16 3l.5 2 2 .5-1 1.5L18 9l-1.5 1 .5 2-2 .5-.5 2-2-.5-1.5 1.5L9 14l-1.5 1.5L6 14l-1.5.5L4 13l-2-.5.5-2L1 9l1.5-1.5-1-1.5L3.5 5.5 4 3.5 6 3l1-1.5L8.5 3 10 2z" stroke="currentColor" stroke-width="1.3"/></svg>
+                  <input type="password" id="confirm" placeholder="Repeat password" required />
+                </div>
               </div>
+
               <div class="form-field form-field--full">
                 <label for="referral">Referral Code <span class="optional">(optional)</span></label>
-                <input type="text" id="referral" placeholder="e.g. ICO-ABC123" />
+                <div class="field-wrap">
+                  <svg class="field-icon" viewBox="0 0 20 20" fill="none"><path d="M8 12l-1.5 1.5a2.5 2.5 0 01-3.536-3.536l3-3a2.5 2.5 0 013.72.22M12 8l1.5-1.5a2.5 2.5 0 013.536 3.536l-3 3a2.5 2.5 0 01-3.72-.22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  <input type="text" id="referral" placeholder="e.g. ICO-ABC123" />
+                </div>
               </div>
+
             </div>
 
             <div class="form-error" id="regError"></div>
-            <button type="submit" class="btn btn--primary btn--lg reg-submit">Register Now →</button>
 
-            <p class="reg-login-link">Already have an account? <a href="login.html">Sign in</a></p>
+            <button type="submit" class="reg-btn">
+              <span>Create Account</span>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+
           </form>
+
+          <p class="reg-login-link">Already have an account? <a href="login.html">Sign in</a></p>
         </div>
 
       </div>

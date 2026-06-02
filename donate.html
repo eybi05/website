@@ -43,106 +43,134 @@
         <div class="don-hero__inner">
           <span class="section-tag">Make a Difference</span>
           <h1 class="don-hero__title">Every Dollar <em>Counts</em></h1>
-          <p class="don-hero__sub">Donations open until the season ends — December 31, 2026. 100% of every dollar reaches our verified charity partners.</p>
+          <p class="don-hero__sub">100% of every donation reaches our verified charity partners. Season 1 closes December 31, 2026.</p>
 
-          <!-- PROGRESS BAR -->
           <div class="don-progress">
-            <div class="don-progress__header">
-              <span class="don-progress__raised"><span id="raisedAmount">$48,200</span> raised</span>
-              <span class="don-progress__goal">Goal: $75,000</span>
+            <div class="don-progress__top">
+              <div>
+                <div class="don-progress__raised" id="raisedAmount">$0</div>
+                <div class="don-progress__raised-label">raised so far</div>
+              </div>
+              <div class="don-progress__right">
+                <div class="don-progress__pct" id="progressPct">0%</div>
+                <div class="don-progress__goal">of $75,000 goal</div>
+              </div>
             </div>
-            <div class="don-progress__bar">
-              <div class="don-progress__fill" id="progressFill" style="width: 64.3%"></div>
+            <div class="don-progress__track">
+              <div class="don-progress__fill" id="progressFill" style="width:0%"></div>
             </div>
-            <div class="don-progress__meta">
-              <span>64% of goal</span>
-              <span id="donorCount">3,840 donors</span>
-            </div>
+            <div class="don-progress__donors" id="donorCount">— donors</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DONATION FORM + STATS -->
-    <section class="section" style="background:var(--bg-base)">
+    <!-- FORM + SIDEBAR -->
+    <section class="don-main">
       <div class="container">
         <div class="don-layout">
 
           <!-- FORM -->
-          <div class="don-form-wrap" data-reveal>
-            <h2 class="don-form__title">Make a Donation</h2>
-            <p class="don-form__sub">You don't need to be registered. Anyone can support the cause.</p>
+          <div class="don-form-card" data-reveal>
+            <h2 class="don-form__title">Choose an Amount</h2>
 
-            <div class="don-presets">
-              <button class="don-preset" data-amount="5">$5</button>
-              <button class="don-preset" data-amount="10">$10</button>
-              <button class="don-preset don-preset--featured" data-amount="25">$25</button>
-              <button class="don-preset" data-amount="50">$50</button>
-              <button class="don-preset" data-amount="100">$100</button>
-            </div>
-
-            <div class="don-custom">
-              <label>Custom Amount</label>
-              <div class="don-custom__wrap">
-                <span>$</span>
-                <input type="number" id="donAmount" min="1" placeholder="Enter amount" />
+            <div class="don-tiles">
+              <button class="don-tile" data-amount="5">
+                <span class="don-tile__amt">$5</span>
+                <span class="don-tile__label">Supplies for one student</span>
+              </button>
+              <button class="don-tile" data-amount="10">
+                <span class="don-tile__amt">$10</span>
+                <span class="don-tile__label">A complete notebook set</span>
+              </button>
+              <button class="don-tile don-tile--featured" data-amount="25">
+                <span class="don-tile__amt">$25</span>
+                <span class="don-tile__label">A month of textbooks</span>
+              </button>
+              <button class="don-tile" data-amount="50">
+                <span class="don-tile__amt">$50</span>
+                <span class="don-tile__label">A student's exam kit</span>
+              </button>
+              <button class="don-tile" data-amount="100">
+                <span class="don-tile__amt">$100</span>
+                <span class="don-tile__label">Fund a full course</span>
+              </button>
+              <div class="don-tile don-tile--custom">
+                <span class="don-tile__amt">$</span>
+                <input type="number" id="donAmount" min="1" placeholder="Custom" />
               </div>
             </div>
 
-            <div class="don-pts-preview" id="donPtsPreview">
-              <span>🎖</span>
-              <span>This donation earns <strong id="donPts">5</strong> charity points (if registered)</span>
+            <div class="don-pts-bar" id="donPtsBar">
+              <span class="don-pts-bar__icon">🎖</span>
+              <span>This earns <strong id="donPts">25</strong> charity points (if registered)</span>
             </div>
 
             <form id="donForm">
-              <div class="form-grid" style="grid-template-columns:1fr">
+              <div class="don-fields">
                 <div class="form-field">
                   <label for="donName">Your Name <span class="optional">(optional)</span></label>
-                  <input type="text" id="donName" placeholder="Show on leaderboard or stay anonymous" />
+                  <div class="field-wrap">
+                    <svg class="field-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.4"/><path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    <input type="text" id="donName" placeholder="Shown on leaderboard" />
+                  </div>
                 </div>
                 <div class="form-field">
-                  <label for="donEmail">Email Address <span class="optional">(optional — for receipt)</span></label>
-                  <input type="email" id="donEmail" placeholder="you@example.com" />
+                  <label for="donEmail">Email <span class="optional">(optional — for receipt)</span></label>
+                  <div class="field-wrap">
+                    <svg class="field-icon" viewBox="0 0 20 20" fill="none"><path d="M2.5 5.5A1.5 1.5 0 014 4h12a1.5 1.5 0 011.5 1.5v9A1.5 1.5 0 0116 16H4a1.5 1.5 0 01-1.5-1.5v-9z" stroke="currentColor" stroke-width="1.4"/><path d="M2.5 6l7.072 4.714a.8.8 0 00.856 0L17.5 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    <input type="email" id="donEmail" placeholder="you@example.com" />
+                  </div>
                 </div>
               </div>
+
               <label class="don-anon-check">
                 <input type="checkbox" id="donAnon" />
                 <span>Donate anonymously</span>
               </label>
-              <button type="submit" class="btn btn--accent btn--lg" style="width:100%;justify-content:center;margin-top:1.5rem">
-                Donate Now ❤️
+
+              <div class="form-error" id="donError"></div>
+
+              <button type="submit" class="don-btn">
+                <span>Donate Now</span>
+                <span>❤️</span>
               </button>
             </form>
 
             <div class="don-trust">
-              <span>🔒 Secure payment</span>
+              <span>🔒 Secure</span>
               <span>📋 Receipt emailed</span>
               <span>✅ 100% to charity</span>
             </div>
           </div>
 
-          <!-- STATS SIDEBAR -->
+          <!-- SIDEBAR -->
           <div class="don-sidebar">
 
-            <div class="don-live" data-reveal>
-              <div class="don-live__head">
-                <span class="lb-live__dot" style="display:inline-block"></span>
-                Recent Donations
+            <div class="don-live-card" data-reveal>
+              <div class="don-live-card__head">
+                <span class="lb-live__dot"></span>
+                <span>Recent Donations</span>
               </div>
-              <div class="don-feed" id="donFeed"></div>
+              <div class="don-feed" id="donFeed">
+                <div class="don-feed-empty">No donations yet — be the first!</div>
+              </div>
             </div>
 
-            <div class="don-top" data-reveal>
+            <div class="don-top-card" data-reveal>
               <h4>Top Donors — Season 1</h4>
-              <ol class="don-top__list" id="donTopList"></ol>
+              <ol class="don-top__list" id="donTopList">
+                <li class="don-feed-empty">No donations yet</li>
+              </ol>
             </div>
 
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- TRANSPARENCY -->
+    <!-- DISTRIBUTION -->
     <section class="section don-transparency" style="background:var(--bg-surface)">
       <div class="container">
         <div class="section-header">
@@ -152,35 +180,25 @@
         </div>
         <div class="don-distribution" data-reveal>
           <div class="don-dist-item">
-            <div class="don-dist-bar" style="--pct:45%"><div class="don-dist-fill don-dist-fill--1"></div></div>
-            <div class="don-dist-label">
-              <strong>45%</strong>
-              <span>EduAccess Global — School supplies</span>
-            </div>
+            <div class="don-dist-bar"><div class="don-dist-fill don-dist-fill--1"></div></div>
+            <div class="don-dist-label"><strong>45%</strong><span>EduAccess Global — School supplies</span></div>
           </div>
           <div class="don-dist-item">
-            <div class="don-dist-bar" style="--pct:25%"><div class="don-dist-fill don-dist-fill--2"></div></div>
-            <div class="don-dist-label">
-              <strong>25%</strong>
-              <span>Clean Water Initiative</span>
-            </div>
+            <div class="don-dist-bar"><div class="don-dist-fill don-dist-fill--2"></div></div>
+            <div class="don-dist-label"><strong>25%</strong><span>Clean Water Initiative</span></div>
           </div>
           <div class="don-dist-item">
-            <div class="don-dist-bar" style="--pct:20%"><div class="don-dist-fill don-dist-fill--3"></div></div>
-            <div class="don-dist-label">
-              <strong>20%</strong>
-              <span>OpenBooks Foundation</span>
-            </div>
+            <div class="don-dist-bar"><div class="don-dist-fill don-dist-fill--3"></div></div>
+            <div class="don-dist-label"><strong>20%</strong><span>OpenBooks Foundation</span></div>
           </div>
           <div class="don-dist-item">
-            <div class="don-dist-bar" style="--pct:10%"><div class="don-dist-fill don-dist-fill--4"></div></div>
-            <div class="don-dist-label">
-              <strong>10%</strong>
-              <span>Youth STEM Africa</span>
-            </div>
+            <div class="don-dist-bar"><div class="don-dist-fill don-dist-fill--4"></div></div>
+            <div class="don-dist-label"><strong>10%</strong><span>Youth STEM Africa</span></div>
           </div>
         </div>
-        <p class="don-transparency__note" data-reveal>Quarterly reports published at <a href="#">transparency.ico-olympiad.org</a> — every transaction audited by an independent accountant.</p>
+        <p class="don-transparency__note" data-reveal>
+          Quarterly reports published at <a href="funding.html">ico-olympiad.org/funding</a> — every transaction audited independently.
+        </p>
       </div>
     </section>
 
@@ -195,9 +213,9 @@
         </div>
         <div class="footer__col"><h5>Platform</h5><a href="index.html">About</a><a href="register.html">Register</a><a href="organisers.html">Exams</a><a href="leaderboard.html">Leaderboard</a><a href="donate.html">Donate</a></div>
         <div class="footer__col"><h5>Subjects</h5><a href="#">Chemistry</a><a href="#">Mathematics</a><a href="#">Physics</a><a href="#">Biology</a></div>
-        <div class="footer__col"><h5>Legal</h5><a href="funding.html">How We Work</a><a href="mailto:info@ico-olympiad.org">info@ico-olympiad.org</a></div>
+        <div class="footer__col"><h5>Legal</h5><a href="funding.html">How We Work</a><a href="mailto:info@ico-olympiad.org">info@ico-olympiad.org</a><a href="#">Terms of Use</a></div>
       </div>
-      <div class="footer__bottom"><p>© 2026 International Charity Olympiad.</p><p>Season 1 — Summer 2026</p></div>
+      <div class="footer__bottom"><p>© 2026 International Charity Olympiad. All rights reserved.</p><p>Season 1 — Summer 2026</p></div>
     </div>
   </footer>
 
