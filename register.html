@@ -24,6 +24,9 @@
       </ul>
       <div class="nav__actions">
         <button class="btn-theme" id="themeToggle" aria-label="Toggle theme"><span class="btn-theme__icon">☀</span></button>
+        <span class="nav__user" id="navUserLabel" style="display:none"></span>
+        <button class="btn btn--ghost btn--sm" id="navLogoutBtn" style="display:none">Logout</button>
+        <a href="login.html" class="btn btn--ghost btn--sm" id="navLoginBtn">Login</a>
       </div>
       <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -259,6 +262,7 @@
                 <span>Total</span>
                 <span id="totalAmount">$5.00</span>
               </div>
+              <div class="form-error" id="regError"></div>
               <div class="step-nav">
                 <button type="button" class="btn btn--ghost btn--lg step-back" data-target="2">← Back</button>
                 <button type="submit" class="btn btn--primary btn--lg">Complete Registration →</button>
@@ -271,9 +275,12 @@
     </div>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/reveal.js"></script>
   <script src="js/register.js"></script>
+  <script src="js/auth-nav.js"></script>
 </body>
 </html>

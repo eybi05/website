@@ -111,6 +111,12 @@
               opacity var(--dur-normal);
 }
 
+.nav__user {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
 @media (max-width: 768px) {
   .nav__links { display: none; }
   .nav__burger { display: flex; }

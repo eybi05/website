@@ -24,7 +24,10 @@
       </ul>
       <div class="nav__actions">
         <button class="btn-theme" id="themeToggle" aria-label="Toggle theme"><span class="btn-theme__icon">☀</span></button>
-        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+        <span class="nav__user" id="navUserLabel" style="display:none"></span>
+        <button class="btn btn--ghost btn--sm" id="navLogoutBtn" style="display:none">Logout</button>
+        <a href="login.html" class="btn btn--ghost btn--sm" id="navLoginBtn">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm" id="navRegisterBtn">Register</a>
       </div>
       <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -198,9 +201,12 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/reveal.js"></script>
   <script src="js/donate.js"></script>
+  <script src="js/auth-nav.js"></script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — ICO</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><span class="nav__logo-icon">⚡</span><span>ICO</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">About</a></li>
+        <li><a href="register.html" class="nav__link">Register</a></li>
+        <li><a href="organisers.html" class="nav__link">Exams</a></li>
+        <li><a href="leaderboard.html" class="nav__link">Leaderboard</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme"><span class="btn-theme__icon">☀</span></button>
+        <span class="nav__user" id="navUserLabel" style="display:none"></span>
+        <button class="btn btn--ghost btn--sm" id="navLogoutBtn" style="display:none">Logout</button>
+        <a href="login.html" class="btn btn--ghost btn--sm nav__link--active" id="navLoginBtn">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm" id="navRegisterBtn">Register</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="login-page">
+    <div class="login-glow login-glow--1"></div>
+    <div class="login-glow login-glow--2"></div>
+
+    <div class="login-card" data-reveal>
+      <div class="login-brand">⚡ ICO</div>
+      <h1 class="login-title">Welcome back</h1>
+      <p class="login-sub">Sign in to your ICO account</p>
+
+      <form id="loginForm" novalidate>
+        <div class="form-field">
+          <label for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" placeholder="jane@example.com" required autocomplete="email" />
+        </div>
+        <div class="form-field" style="margin-top:1rem">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Your password" required autocomplete="current-password" />
+        </div>
+
+        <div class="form-error" id="loginError"></div>
+
+        <button type="submit" class="btn btn--primary btn--lg login-submit">Sign In →</button>
+      </form>
+
+      <p class="login-footer">
+        Don't have an account? <a href="register.html">Register here</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/auth-nav.js"></script>
+</body>
+</html>

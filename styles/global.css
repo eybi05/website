@@ -129,6 +129,15 @@ ul { list-style: none; }
   transform: translateY(0);
 }
 
+/* Form error */
+.form-error {
+  color: var(--accent-rose);
+  font-size: var(--text-sm);
+  margin-top: var(--space-3);
+  min-height: 1.4em;
+  text-align: center;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg-base); }
