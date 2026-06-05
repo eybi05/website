@@ -20,7 +20,7 @@ tiles.forEach(tile => {
 
 customInput?.addEventListener('input', () => {
   tiles.forEach(t => t.classList.remove('active'));
-  donAmount = Math.max(1, parseInt(customInput.value, 10) || 1);
+  donAmount = Math.max(5, parseInt(customInput.value, 10) || 5);
   updatePts(donAmount);
 });
 
@@ -113,6 +113,12 @@ document.getElementById('donForm')?.addEventListener('submit', async e => {
   const anon    = document.getElementById('donAnon')?.checked;
 
   if (errorEl) errorEl.textContent = '';
+
+  if (donAmount < 5) {
+    if (errorEl) errorEl.textContent = 'Minimum donation is $5.';
+    return;
+  }
+
   btn.disabled = true;
   btn.textContent = 'Processing…';
 
