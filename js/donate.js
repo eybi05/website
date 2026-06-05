@@ -129,18 +129,18 @@ document.getElementById('donForm')?.addEventListener('submit', async e => {
   if (error) {
     if (errorEl) errorEl.textContent = 'Something went wrong. Please try again.';
     btn.disabled = false;
-    btn.innerHTML = '<span>Donate Now</span><span>❤️</span>';
+    btn.innerHTML = '<span>Donate Now</span>';
     return;
   }
 
-  btn.innerHTML = '<span>Thank you! ❤️</span>';
+  btn.innerHTML = '<span>Thank you!</span>';
 
   // Refresh stats and feed
   await Promise.all([loadStats(), loadFeed(), loadTopDonors()]);
 
   setTimeout(() => {
     btn.disabled = false;
-    btn.innerHTML = '<span>Donate Now</span><span>❤️</span>';
+    btn.innerHTML = '<span>Donate Now</span>';
     document.getElementById('donForm')?.reset();
     document.querySelector('.don-tile--featured')?.classList.add('active');
     donAmount = 25;
