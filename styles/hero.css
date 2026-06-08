@@ -163,7 +163,7 @@
 
 .hero__scroll {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 1.25rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -198,4 +198,12 @@
   .hero__cta .btn { width: 100%; justify-content: center; }
   .hero__stat-sep { display: none; }
   .hero__meta { flex-direction: column; gap: var(--space-4); }
+  .hero__scroll { display: none; }
+}
+
+/* On shorter viewports the hero content grows close to (or past) the
+   viewport height, leaving the absolutely-positioned scroll hint with no
+   clearance from the stats row below it — hide it rather than let them crowd. */
+@media (max-height: 880px) {
+  .hero__scroll { display: none; }
 }
